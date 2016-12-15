@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-scrolltofixed.js
+//= require wow.js
+//= require wow.js
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
