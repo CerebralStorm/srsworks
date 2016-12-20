@@ -89,7 +89,8 @@ p{
 
 .header{
 	text-align:center;
-	background:image-url('pw_maze_black_2X.png') left top repeat;
+	background:image-url('bg3.png');
+	background-size:cover;
 	padding:280px 0;
 }
 .logo{
