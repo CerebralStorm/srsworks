@@ -3,7 +3,7 @@ RailsAdmin.config do |config|
   ### Popular gems integration
   config.authenticate_with do
     authenticate_or_request_with_http_basic('Enter Admin Credentials') do |username, password|
-      username == 'srsworks' && password == '3120jayda'
+      username == 'srsworks' && password == '3210jayda'
     end
   end
   ## == Devise ==
