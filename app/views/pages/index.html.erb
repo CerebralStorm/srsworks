@@ -1,3 +1,9 @@
+<section class="formerly">
+  <div class="container">
+    <h2>Formerly Fisher's Window Cleaning & More</h2>
+  </div>
+</section>
+
 <header class="header" id="header">
   <div class="container">
     <figure class="logo animated fadeInDown delay-07s">
@@ -20,11 +26,35 @@
             <h4 class="modal-title" id="myModalLabel">Free Estimate</h4>
           </div>
           <div class="modal-body">
-            <p>Coming soon</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <h4> Please call us at <%= fa_icon "phone" %><span>1-435-767-8656</span></h4>
+            <h3> - Or - </h3>
+            <h4>Send us a message and we will contact you shortly</h4>
+            </div>
+            <div class="form">
+              <%= form_for Message.new, html: {class: "contactForm"} do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :name, class: "form-control input-text", placeholder: "Your Name", required: true %>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <%= f.email_field :email, class: "form-control input-text", placeholder: "Your Email", required: true %>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <%= f.text_field :subject, class: "form-control input-text", placeholder: "Subject", required: true %>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <%= f.text_area :content, class: "form-control input-text", placeholder: "Message", rows: '5', required: true %>
+                  <div class="validation"></div>
+                </div>
+
+                <div class="text-center"><button type="submit" class="input-btn">Send Message</button></div>
+              <% end %>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>v
           </div>
         </div>
       </div>
@@ -37,7 +67,7 @@
     <ul class="main-nav">
       <li><a href="#header">Home</a></li>
       <li><a href="#service">Services</a></li>
-      <li><a href="#header"><%= image_tag 'logo-small.png', height: "80" %></a></li>
+      <li class="footer-logo"><a href="#header"><%= image_tag 'logo-small.png', height: "80" %></a></li>
       <li><a href="#work">Featured Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -164,9 +194,6 @@
         </div>
         <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
           <div class="form">
-
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
             <%= form_for Message.new, html: {class: "contactForm"} do |f| %>
               <div class="form-group">
                 <%= f.text_field :name, class: "form-control input-text", placeholder: "Your Name", required: true %>
@@ -195,7 +222,7 @@
   </div>
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo"><a href="#"><%= image_tag "footer-logo.png" %></a></div>
+      <div class="footer-logo"><a href="#"><%= image_tag 'main-logo.png', height: "80" %></a></div>
       <span class="copyright">&copy; SRS Works LLC. All Rights Reserved</span>
     </div>
   </footer>
