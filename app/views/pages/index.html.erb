@@ -8,7 +8,27 @@
     <ul class="we-create animated fadeInUp delay-1s">
       <li>Hurricane, St. George, Washington, Ivins, La Verkin, Virgin, Springdale, Santa Clara, Toquerville, Sun River, Little Valley</li>
     </ul>
-    <a class="link animated fadeInUp delay-1s" href="#">Click for a free estimate</a>
+    <button type="button" class="link animated fadeInUp delay-1s" data-toggle="modal" data-target="#myModal">
+      Click for a free estimate
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Free Estimate</h4>
+          </div>
+          <div class="modal-body">
+            <p>Coming soon</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -17,6 +37,7 @@
     <ul class="main-nav">
       <li><a href="#header">Home</a></li>
       <li><a href="#service">Services</a></li>
+      <li><a href="#header"><%= image_tag 'logo-small.png', height: "80" %></a></li>
       <li><a href="#work">Featured Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -146,25 +167,26 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <%= form_for Message.new, html: {class: "contactForm"} do |f| %>
               <div class="form-group">
-                <input type="text" name="name" class="form-control input-text" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <%= f.text_field :name, class: "form-control input-text", placeholder: "Your Name", required: true %>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control input-text" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <%= f.email_field :email, class: "form-control input-text", placeholder: "Your Email", required: true %>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control input-text" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <%= f.text_field :subject, class: "form-control input-text", placeholder: "Subject", required: true %>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control input-text text-area" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <%= f.text_area :content, class: "form-control input-text", placeholder: "Message", rows: '5', required: true %>
                 <div class="validation"></div>
               </div>
 
               <div class="text-center"><button type="submit" class="input-btn">Send Message</button></div>
+            <% end %>
             </form>
           </div>
         </div>

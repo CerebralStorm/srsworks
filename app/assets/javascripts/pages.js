@@ -2,17 +2,16 @@ $(document).ready(function(e) {
   console.log($('#test'))
   $('#test').scrollToFixed();
   $('.res-nav_click').click(function(){
-      $('.main-nav').slideToggle();
-      return false
-
+    $('.main-nav').slideToggle();
+    return false
   });
 });
 
 wow = new WOW(
-  {
-    animateClass: 'animated',
-    offset:       100
-  }
+{
+  animateClass: 'animated',
+  offset:       100
+}
 );
 wow.init();
 
@@ -38,9 +37,9 @@ $(window).load(function(){
 
 
   var $container = $('.portfolioContainer'),
-      $body = $('body'),
-      colW = 375,
-      columns = null;
+  $body = $('body'),
+  colW = 375,
+  columns = null;
 
 
   $container.isotope({
@@ -59,20 +58,20 @@ $(window).load(function(){
       columns = currentColumns;
       // apply width to container manually, then trigger relayout
       $container.width( columns * colW )
-        .isotope('reLayout');
+      .isotope('reLayout');
     }
 
   }).smartresize(); // trigger resize to set container width
   $('.portfolioFilter a').click(function(){
-        $('.portfolioFilter .current').removeClass('current');
-        $(this).addClass('current');
+    $('.portfolioFilter .current').removeClass('current');
+    $(this).addClass('current');
 
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
+    var selector = $(this).attr('data-filter');
+    $container.isotope({
 
-            filter: selector,
-         });
-         return false;
+      filter: selector,
     });
+    return false;
+  });
 
 });

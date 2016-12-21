@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+      <% if message.present? %>
+        <div class="alert <%= bootstrap_class_for(type)%> alert-dismissible" role="alert">
+          <button class='close' data-dismiss="alert"> × </button>
+          <p class='text-center'><%= message %></p>
+        </div>
+        <% flash[type.to_sym] = nil %>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
