@@ -1,7 +1,7 @@
 <header class="header" id="header">
   <div class="container">
     <figure class="logo animated fadeInDown delay-07s">
-      <a href="#"><%= image_tag "logo-large.png" %></a>
+      <a href="#"><%= image_tag "main-logo.png" %></a>
     </figure>
     <h1 class="animated fadeInDown delay-07s">Let the outside in!</h1>
     <h4 class="animated fadeInDown delay-07s">Window Cleaning, Pressure Washing, and More</h4>
@@ -17,7 +17,6 @@
     <ul class="main-nav">
       <li><a href="#header">Home</a></li>
       <li><a href="#service">Services</a></li>
-      <li class="small-logo"><a href="#header"><%= image_tag "small-logo.png" %></a></li>
       <li><a href="#work">Featured Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -126,20 +125,20 @@
       <div class="row">
         <div class="col-lg-6 col-sm-7 wow fadeInLeft">
           <div class="contact-info-box address clearfix">
-            <h3><i class="fa-map-marker"></i></h3>
+            <%= fa_icon "map-marker" %></i>
             <span>Based in Hurricane, UT</span>
           </div>
           <div class="contact-info-box phone clearfix">
-            <i class="fa-tint"></i>
+            <%= fa_icon "phone" %>
             <span>1-435-767-8656</span>
           </div>
           <div class="contact-info-box email clearfix">
-            <h3><%= fa_icon "pencil" %></h3>
-            <span>SRSWorksLLC@gmail.com</span>
+            <%= fa_icon "pencil" %>
+            <span><a href='mailto:SRSWorksLLC@gmail.com'>SRSWorksLLC@gmail.com</a></span>
           </div>
           <ul class="social-link">
-            <li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
-            <li class="facebook"><a href="#"><i class="fa-facebook"></i></a></li>
+            <li class="facebook"><a href="#"><%= fa_icon "facebook" %></i></a></li>
+            <li class="twitter"><a href="#"><%= fa_icon "twitter" %></i></a></li>
           </ul>
         </div>
         <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
@@ -175,10 +174,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-logo"><a href="#"><%= image_tag "footer-logo.png" %></a></div>
-      <span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
-      <div class="credits">
-        <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      <span class="copyright">&copy; SRS Works LLC. All Rights Reserved</span>
     </div>
   </footer>
 </section>

@@ -94,7 +94,7 @@ p{
 	padding:280px 0;
 }
 .logo{
-	width:130px;
+	width:500px;
 	margin:0 auto 35px;
 }
 .header h1{
@@ -584,7 +584,7 @@ border: 2px solid #fff;
 /* Talk Business
 ---------------------------------*/
 .business-talking{
-	background:image-url('section-bg2.jpg') top center no-repeat;
+	background:image-url('section-bg3.gif') top center no-repeat;
 	background-size:cover;
 	padding:60px 0 10px;
 	text-align:center;
